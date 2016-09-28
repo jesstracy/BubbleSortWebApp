@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * Created by jessicatracy on 9/28/16.
  */
 @Controller
-public class BubbleSorterWebAnimationController {
+public class BubbleSorterController {
     @RequestMapping(path = "/", method = RequestMethod.GET)
     public String home() {
         return "home";

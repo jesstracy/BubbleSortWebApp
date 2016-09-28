@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="BubbleSorterAngularApp">
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-<script src="js/tiy-ng-controller.js"></script>
+<script src="js/bubblesorter-ng-controller.js"></script>
 
 <head>
     <meta charset="UTF-8">
@@ -17,6 +17,13 @@
 Enter a list of numbers, separated by spaces.
 <input type="text" ng-model="inputString"/>
 <input type="button" ng-click="submitInputString(inputString)" value="Enter"/>
+
+<br/>
+<br/>
+<h4>Your sorted list: </h4>
+<span ng-repeat="currentInt in sortedList">
+    {{currentInt}} <br/>
+</span>
 
 </body>
 </html>
