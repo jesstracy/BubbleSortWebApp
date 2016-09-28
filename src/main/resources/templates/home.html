@@ -28,5 +28,33 @@ Enter a list of numbers, separated by spaces.
     <br/>
 </span>
 
+<h4>Steps getting to your sorted list: </h4>
+<span ng-repeat="currentArray in listOfSteps">
+    <span ng-repeat="currentInt in currentArray">
+
+        <span ng-if="colorHighlight">
+            <span style="color: {{color}}">
+                {{ currentInt }}
+            </span>
+        </span>
+
+        <span ng-if="!colorHighlight">
+            <span style="color: {{color}}">
+                {{ currentInt }}
+            </span>
+        </span>
+
+
+
+    </span>
+    <br/>
+</span>
+
+<h4>Click "Step Through" to cycle through the steps of the sort: </h4>
+<br/>
+{{currentArray}}
+<br/><br/>
+<input type="button" ng-click="stepThroughButton()" value="Step Through"/>
+
 </body>
 </html>

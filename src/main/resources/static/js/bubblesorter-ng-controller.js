@@ -16,4 +16,17 @@ angular.module('BubbleSorterAngularApp', [])
                     });
         };
 
+
+        $scope.stepThroughButton = function() {
+            $scope.currentArray = $scope.listOfSteps[currentOuterIndex];
+            if (!(currentOuterIndex >= $scope.listOfSteps.length)) {
+                currentOuterIndex++;
+            }
+        }
+
+
+
+        $scope.color = "black";
+        var currentOuterIndex = 0;
+
     });
