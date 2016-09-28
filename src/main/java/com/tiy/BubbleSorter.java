@@ -19,14 +19,18 @@ public class BubbleSorter {
 
     public ArrayList<ArrayList<Integer>> bubbleSortArrayOfSteps(int[] arrayToSort) {
         ArrayList<ArrayList<Integer>> arrayOfSteps = new ArrayList<>();
+        arrayOfSteps.add(arraytoArrayList(arrayToSort));
         for (int counter = arrayToSort.length; counter >= 0; counter--) {
+            boolean switchHappened = false;
             for (int insideCounter = 0; insideCounter < arrayToSort.length - 1; insideCounter++) {
                 if (arrayToSort[insideCounter] > arrayToSort[insideCounter + 1]) {
                     swapNums(insideCounter, insideCounter + 1, arrayToSort);
+                    switchHappened = true;
                 }
             }
-            ArrayList<Integer> arrayToSortArrayList = arraytoArrayList(arrayToSort);
-            arrayOfSteps.add(arrayToSortArrayList);
+            if (switchHappened) {
+                arrayOfSteps.add(arraytoArrayList(arrayToSort));
+            }
             printNums(arrayToSort);
         }
         return arrayOfSteps;
