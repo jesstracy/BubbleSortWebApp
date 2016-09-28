@@ -9,7 +9,7 @@ angular.module('BubbleSorterAngularApp', [])
                     function successCallback(response) {
                         console.log(response.data);
                         console.log("Adding data to scope");
-                        $scope.sortedList = response.data;
+                        $scope.listOfSteps = response.data;
                     },
                     function errorCallback(response) {
                         console.log("Unable to get data...");
