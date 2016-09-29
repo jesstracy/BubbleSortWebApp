@@ -49,19 +49,24 @@ angular.module('BubbleSorterAngularApp', [])
 //        }
 
         $scope.stepThroughButton = function() {
-            if (!(currentInnerIndex >= $scope.listOfSteps[currentOuterIndex].length)) {
-//                var currentInt = $scope.listOfSteps[currentOuterIndex][currentInnerIndex];
-                if ($scope.listOfSteps[currentOuterIndex][currentInnerIndex] > $scope.listOfSteps[currentOuterIndex][currentInnerIndex + 1]) {
-                    var holder = $scope.listOfSteps[currentOuterIndex][currentInnerIndex];
-                    $scope.listOfSteps[currentOuterIndex][currentInnerIndex] = $scope.listOfSteps[currentOuterIndex][currentInnerIndex + 1];
-                    $scope.listOfSteps[currentOuterIndex][currentInnerIndex + 1] = holder;
-//                    currentInnerIndex +=  2;
-//                } else {
-//                    currentInnerIndex += 1;
+            if ($scope.listOfSteps[currentOuterIndex] != undefined) {
+                $scope.currentArray = $scope.listOfSteps[currentOuterIndex];
+                if (!(currentInnerIndex >= $scope.listOfSteps[currentOuterIndex].length)) {
+    //                var currentInt = $scope.listOfSteps[currentOuterIndex][currentInnerIndex];
+                    if ($scope.listOfSteps[currentOuterIndex][currentInnerIndex] > $scope.listOfSteps[currentOuterIndex][currentInnerIndex + 1]) {
+                        var holder = $scope.listOfSteps[currentOuterIndex][currentInnerIndex];
+                        $scope.listOfSteps[currentOuterIndex][currentInnerIndex] = $scope.listOfSteps[currentOuterIndex][currentInnerIndex + 1];
+                        $scope.listOfSteps[currentOuterIndex][currentInnerIndex + 1] = holder;
+    //                    currentInnerIndex +=  2;
+    //                } else {
+    //                    currentInnerIndex += 1;
+                    }
+                    currentInnerIndex++;
+                } else if (!(currentOuterIndex >= $scope.listOfSteps.length)) {
+                    currentOuterIndex++;
                 }
-                currentInnerIndex++;
-            } else if (!(currentOuterIndex >= $scope.listOfSteps.length)) {
-                currentOuterIndex++;
+            } else {
+                console.log("Already done stepping through!");
             }
         }
 
