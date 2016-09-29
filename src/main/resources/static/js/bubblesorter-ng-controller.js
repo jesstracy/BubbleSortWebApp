@@ -64,6 +64,7 @@ angular.module('BubbleSorterAngularApp', [])
                     currentInnerIndex++;
                 } else if (!(currentOuterIndex >= $scope.listOfSteps.length)) {
                     currentOuterIndex++;
+                    currentInnerIndex = 0;
                 }
             } else {
                 console.log("Already done stepping through!");
@@ -72,7 +73,7 @@ angular.module('BubbleSorterAngularApp', [])
 
 
 
-        $scope.color = "black";
+        $scope.highlightedColor = true;
         var currentOuterIndex = 0;
         var currentInnerIndex = 0;
 
